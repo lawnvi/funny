@@ -3,3 +3,11 @@
 ### efis
 1. 联想小新510s出色版 i7-6567 550
 2. msi b450mortar max 3700x 570
+
+#### Thanks for
+> 1. 黑果小兵：https://blog.daliansky.net/
+> 2. OpenCore：https://github.com/acidanthera/OpenCorePkg/releases
+> 3. OpenCore驱动：https://dortania.github.io/OpenCore-Install-Guide/ktext.html
+> 4. OpenCore编辑器(win)：https://github.com/ic005k/QtOpenCoreConfig/releases
+> 5. OpenCore排错：https://opencore.slowgeek.com/
+> 6. EFI的创建视频：https://www.bilibili.com/video/BV18V41187JZ?t=1791
