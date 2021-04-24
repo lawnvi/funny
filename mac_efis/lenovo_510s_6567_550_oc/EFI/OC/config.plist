@@ -1142,7 +1142,7 @@
 				<key>SystemAudioVolume</key>
 				<data>YA==</data>
 				<key>boot-args</key>
-				<string>keepsyms=1 alcid=14 igfxonln=1</string>
+				<string>keepsyms=1 alcid=14</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>
