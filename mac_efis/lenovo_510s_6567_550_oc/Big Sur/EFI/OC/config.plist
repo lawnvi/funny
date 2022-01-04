@@ -1304,11 +1304,11 @@
 			<key>MaxBIOSVersion</key>
 			<false/>
 			<key>MLB</key>
-			<string>C02628500J9H9W8FB</string>
+			<string>C02639501GUH9W8A8</string>
 			<key>ProcessorType</key>
-			<integer>0</integer>
+			<integer>1799</integer>
 			<key>ROM</key>
-			<data>5KV0VNSE</data>
+			<data>cR+Hi162</data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemMemoryStatus</key>
@@ -1316,9 +1316,9 @@
 			<key>SystemProductName</key>
 			<string>MacBookPro13,2</string>
 			<key>SystemSerialNumber</key>
-			<string>C02S2CZAGYFH</string>
+			<string>C02SG00HGYFH</string>
 			<key>SystemUUID</key>
-			<string>2EF1A13E-E5C7-40F1-8960-F86AC854D484</string>
+			<string>DA6EB3CA-98B6-4763-AE44-CADA98D4831B</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
@@ -1446,6 +1446,8 @@
 			<true/>
 			<key>ProvideConsoleGop</key>
 			<true/>
+			<key>ReconnectGraphicsOnConnect</key>
+			<false/>
 			<key>ReconnectOnResChange</key>
 			<false/>
 			<key>ReplaceTabWithSpace</key>
@@ -1458,6 +1460,8 @@
 			<string>BuiltinGraphics</string>
 			<key>UgaPassThrough</key>
 			<false/>
+			<key>UIScale</key>
+			<integer>-1</integer>
 		</dict>
 		<key>ProtocolOverrides</key>
 		<dict>
@@ -1505,6 +1509,8 @@
 			<key>DisableSecurityPolicy</key>
 			<false/>
 			<key>EnableVectorAcceleration</key>
+			<false/>
+			<key>EnableVmx</key>
 			<false/>
 			<key>ExitBootServicesDelay</key>
 			<integer>0</integer>

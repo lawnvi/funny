@@ -2,7 +2,7 @@
 > something maybe funny, such as efi of black apple  
 ### efis
 1. 联想小新510s出色版 i7-6567 550
-2. msi b450mortar max 3700x 570
+2. msi b450mortar max 3700x 570(not support it anymore)
 3. [strix-b450i 3700x 560D](https://github.com/willza3/macOS-strix-B450i)
 #### Thanks for
 > 1. 黑果小兵：https://blog.daliansky.net/
