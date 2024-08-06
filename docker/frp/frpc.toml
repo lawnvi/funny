@@ -1,0 +1,15 @@
+serverAddr = "x.x.x.x"
+serverPort = 7007
+
+[[proxies]]
+name = "web"
+type = "http"
+localPort = 80
+# customDomains = ["www.yourdomain.com"]
+
+[[proxies]]
+name = "ssh"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 22
+remotePort = 6000

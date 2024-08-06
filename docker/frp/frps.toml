@@ -1,0 +1,12 @@
+[common]
+# 服务端监听端口
+bind_port = 7007
+
+# 如果你想启用带有认证的dashboard，可以配置以下参数
+dashboard_port = 7081
+dashboard_user = "admin"
+dashboard_pwd = passwd
+
+# vhost_http_port 和 vhost_https_port 用于配置HTTP和HTTPS的虚拟主机端口
+# vhost_http_port = 7080
+# vhost_https_port = 4433
