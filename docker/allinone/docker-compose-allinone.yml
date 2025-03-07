@@ -1,0 +1,80 @@
+version: '3.8'
+
+services:
+  nginx:
+    container_name: nginx
+    hostname: nginx
+    image: nginx:stable
+    ports:
+      - "8000:80"
+    volumes:
+      - ./nginx/conf.d/:/etc/nginx/conf.d           # 配置文件
+      - ./nginx/cert/:/etc/cert/                    # ssl证书
+      - ./nginx/www/:/usr/share/nginx/html/         # 默认显示的index网页
+      - ./nginx/logs/:/var/log/nginx/               # 日志文件
+    restart: always
+    networks:
+      - webnet
+
+  mysql:
+    container_name: mysql
+    hostname: mysql
+    image: mysql:8.0
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+      # - ./mysql/my.cnf:/etc/mysql/my.cnf
+    environment:
+      TZ: Asia/Shanghai
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+    networks:
+      - webnet
+
+  redis:
+    container_name: redis
+    hostname: redis
+    image: redis/redis-stack:6.2.0-v1-edge
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis:/data
+    environment:
+      - TZ=Asia/Shanghai
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_PASSWORD=${REDIS_PASS}
+    networks:
+      - webnet
+
+  postgresql:
+    image: postgres:16
+    container_name: postgresql
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    networks:
+      - webnet
+
+  cloudflared:
+    container_name: cloudflared-tunnels
+    image: cloudflare/cloudflared:2025.2.1
+    restart: unless-stopped
+    command: tunnel --config /etc/cloudflared/config.yml run  # 指定配置文件路径
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    volumes:
+      - ./cloudflared/config.yml:/etc/cloudflared/config.yml   # 挂载配置文件
+    networks:
+      - webnet
+
+
+networks:
+  webnet:
+    driver: bridge
+

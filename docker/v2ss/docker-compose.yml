@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  nginx:
+    container_name: nginx
+    hostname: nginx
+    image: nginx:stable
+
+    ports:
+      - 80:80
+      - 443:443
+      - 80:80/udp
+      - 443:443/udp
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/cert:/etc/nginx/cert
+    restart: always
+    networks:
+      - docker
+
+  v2ss:
+    container_name: v2ss
+    hostname: v2ss
+    build:
+      context: ./v2ss
+    restart: always
+    expose:
+      - 9899/tcp
+      - 9899/udp
+    networks:
+      - docker
+
+networks:
+  docker:
+    driver: bridge
+    external: false

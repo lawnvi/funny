@@ -1,0 +1,7 @@
+# tunnel: <TUNNEL_ID>      # 替换为你的 Tunnel ID（从 Cloudflare 控制台获取）
+# credentials-file: /etc/cloudflared/credentials.json
+
+ingress:
+  - hostname: sys.abc.com
+    service: tcp://glances:61208
+  - service: http_status:404       # 默认回退规则

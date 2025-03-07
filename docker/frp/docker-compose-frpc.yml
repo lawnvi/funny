@@ -2,7 +2,7 @@ version: '3'
 
 services:
   frps:
-    image: snowdreamtech/frpc
+    image: ghcr.io/snowdreamtech/frps
     container_name: frpc
     restart: always
     network_mode: host
